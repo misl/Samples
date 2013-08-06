@@ -11,7 +11,7 @@
     <module>simple</module>
     <module>branding</module>
     <module>feature</module>
-    <module>distribution</module>
+    <module>assembly</module>
   </modules>
 
   <properties>
