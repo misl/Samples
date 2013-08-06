@@ -1,6 +1,25 @@
-*.class
+######################
+# OS generated files #
+######################
+Thumbs.db
 
+##########################
+# Eclipse / Java / Maven #
+##########################
+.classpath
+.project
+.settings/
+target/
+
+#################
 # Package Files #
+#################
 *.jar
 *.war
 *.ear
+*.class
+
+##################
+# Various others #
+##################
+tmp/
