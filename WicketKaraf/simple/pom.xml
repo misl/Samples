@@ -30,6 +30,10 @@
   <packaging>bundle</packaging>
   <name>WicketKaraf :: Simple</name>
 
+  <properties>
+    <cglib.range>[2,3)</cglib.range>
+  </properties>
+  
   <build>
     <plugins>
       <plugin>

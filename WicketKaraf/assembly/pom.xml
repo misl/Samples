@@ -43,6 +43,22 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
+      <groupId>org.ops4j.pax.wicket</groupId>
+      <artifactId>paxwicket</artifactId>
+      <version>${pax.wicket.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j.pax.wicket</groupId>
+      <artifactId>features</artifactId>
+      <version>${pax.wicket.version}</version>
+      <classifier>features</classifier>
+      <type>xml</type>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>nl.xup.karaf.wicket</groupId>
       <artifactId>features</artifactId>
       <version>${project.version}</version>
@@ -116,9 +132,11 @@
             <feature>http</feature>
             <feature>ssh</feature>
             <feature>config</feature>
+            <feature>pax-wicket</feature>
+            <feature>pax-wicket-blueprint</feature>
           </bootFeatures>
           <startupFeatures>
-            <feature>wicketkaraf</feature>
+            <feature>wicketkaraf-simple</feature>
           </startupFeatures>
         </configuration>
       </plugin>
