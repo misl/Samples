@@ -37,11 +37,6 @@
   </build>
 
   <dependencies>
-    <dependency>
-      <groupId>nl.xup.karaf.wicket</groupId>
-      <artifactId>simple</artifactId>
-      <version>${project.version}</version>
-    </dependency>
   </dependencies>
 
 </project>

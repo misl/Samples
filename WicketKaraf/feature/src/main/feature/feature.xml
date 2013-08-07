@@ -2,7 +2,7 @@
 <features name="wicketkaraf" version="${project.version}">
       
   <feature name="wicketkaraf-simple" version="${project.version}" description="Simple application using pax wicket" resolver="(obr)">
-    <bundle>mvn:nl.xup.karaf.wicket/simple/${project.version}</bundle>
+    <bundle start-level="85">mvn:nl.xup.karaf.wicket/simple/${project.version}</bundle>
   </feature>
       
 </features>
