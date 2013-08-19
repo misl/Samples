@@ -1,0 +1,15 @@
+
+<features name="wicketkaraf" version="${project.version}">
+  <repository>mvn:org.apache.shiro/shiro-features/${shiro.version}/xml/features</repository>
+  <repository>mvn:org.ops4j.pax.wicket/paxwicket/${pax.wicket.version}/xml/features</repository>
+  <repository>mvn:org.ops4j.pax.wicket/features/${pax.wicket.version}/xml/features</repository>
+      
+  <feature name="wicketkaraf-simple" version="${project.version}" description="Simple application using pax wicket" resolver="(obr)">
+    <feature>shiro-web</feature>
+    <feature>pax-wicket</feature>
+    <feature>pax-wicket-blueprint</feature>
+
+    <bundle start-level="85">mvn:nl.xup.karaf.wicket/simple/${project.version}</bundle>
+  </feature>
+      
+</features>
