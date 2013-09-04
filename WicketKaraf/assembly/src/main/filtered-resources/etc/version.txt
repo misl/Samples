@@ -1,6 +1,0 @@
-
-#
-# Dit veld geeft het versienummer van de Reva aan.
-#
-reva.version = ${project.version}
-

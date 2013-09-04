@@ -16,6 +16,7 @@
   <name>WicketKaraf :: Distribution</name>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <assembly.directory>${project.build.directory}/assembly</assembly.directory>
   </properties>
 
@@ -59,33 +60,31 @@
   </dependencies>
 
   <build>
-    <resources>
-      <resource>
-        <directory>${project.basedir}/src/main/resources</directory>
-        <filtering>false</filtering>
-        <includes>
-          <include>**/*</include>
-        </includes>
-      </resource>
-      <resource>
-        <directory>${project.basedir}/src/main/filtered-resources</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>**/*</include>
-        </includes>
-      </resource>
-    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <executions>
           <execution>
-            <id>filter</id>
-            <phase>generate-resources</phase>
+            <id>copy-resources</id>
+            <phase>prepare-package</phase>
             <goals>
-              <goal>resources</goal>
+              <goal>copy-resources</goal>
             </goals>
+            <configuration>
+              <outputDirectory>${project.basedir}/target/assembly</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/src/main/assembly</directory>
+                  <filtering>false</filtering>
+                </resource>
+                <resource>
+                  <directory>${project.basedir}/src/main/filtered-assembly</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>            
           </execution>
         </executions>
       </plugin>
