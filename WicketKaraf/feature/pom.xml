@@ -6,11 +6,11 @@
 
   <parent>
     <groupId>nl.xup.karaf.wicket</groupId>
-    <artifactId>reactor</artifactId>
+    <artifactId>wk-reactor</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>features</artifactId>
+  <artifactId>wk-features</artifactId>
   <packaging>feature</packaging>
 
   <name>WicketKaraf :: Features</name>

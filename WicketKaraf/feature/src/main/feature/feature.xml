@@ -4,10 +4,10 @@
   <repository>mvn:org.ops4j.pax.wicket/features/${pax.wicket.version}/xml/features</repository>
       
   <feature name="wicketkaraf-simple" version="${project.version}" description="Simple application using pax wicket" resolver="(obr)">
-    <feature>pax-wicket</feature>
-    <feature>pax-wicket-blueprint</feature>
+    <feature version="${pax.wicket.version}">pax-wicket</feature>
+    <feature version="${pax.wicket.version}">pax-wicket-blueprint</feature>
 
-    <bundle start-level="85">mvn:nl.xup.karaf.wicket/simple/${project.version}</bundle>
+    <bundle start-level="85">mvn:nl.xup.karaf.wicket/wk-simple/${project.version}</bundle>
   </feature>
       
 </features>
