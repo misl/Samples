@@ -6,7 +6,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.xup.karaf.wicket</groupId>
-  <artifactId>reactor</artifactId>
+  <artifactId>wks-reactor</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>WicketKaraf :: Reactor</name>
