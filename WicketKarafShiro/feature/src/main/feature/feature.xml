@@ -9,6 +9,9 @@
     <feature>pax-wicket</feature>
     <feature>pax-wicket-blueprint</feature>
 
+<!--
+    <bundle start-level="85">wrap:mvn:org.wicketstuff/wicketstuff-shiro/${wicketstuff.version}</bundle>
+-->    
     <bundle start-level="85">mvn:nl.xup.karaf.wicket/wks-simple/${project.version}</bundle>
   </feature>
       

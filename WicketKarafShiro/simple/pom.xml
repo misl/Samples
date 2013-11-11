@@ -15,7 +15,6 @@
 
   <properties>
     <cglib.range>[2,3)</cglib.range>
-    <wicketstuff.version>1.5.8</wicketstuff.version>
   </properties>
   
   <build>
@@ -55,10 +54,7 @@
               org.apache.wicket.ajax,
               org.osgi.service.blueprint,
               org.apache.wicket.core.request.mapper,
-              org.apache.shiro, 
-              org.apache.shiro.web.env, 
-              org.apache.shiro.web.servlet, 
-              org.apache.shiro.web.tags 
+              *
             </Import-Package>
             <Require-Bundle>org.ops4j.pax.wicket.service</Require-Bundle>
           </instructions>
@@ -81,25 +77,22 @@
       <scope>provided</scope>
     </dependency>
 
-		<dependency>
-			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-web</artifactId>
-			<version>${shiro.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.shiro</groupId>
-			<artifactId>shiro-core</artifactId>
-			<version>${shiro.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.wicketstuff</groupId>
-			<artifactId>wicketstuff-shiro</artifactId>
-			<version>${wicketstuff.version}</version>
-			<scope>provided</scope>
-		</dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-web</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-core</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.wicketstuff</groupId>
+      <artifactId>wicketstuff-shiro</artifactId>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 </project>
 

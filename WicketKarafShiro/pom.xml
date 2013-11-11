@@ -23,6 +23,7 @@
 
     <pax.wicket.version>3.0.1</pax.wicket.version>
     <shiro.version>1.2.2</shiro.version>
+    <wicketstuff.version>6.11.1</wicketstuff.version>
     <karaf.version>3.0.0.RC1</karaf.version>
     <osgi.framework.version>4.3.1</osgi.framework.version>
     <aries.blueprint.version>1.1.0</aries.blueprint.version>
@@ -111,6 +112,17 @@
         <groupId>org.apache.shiro</groupId>
         <artifactId>shiro-web</artifactId>
         <version>${shiro.version}</version>
+      </dependency>
+       <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-core</artifactId>
+        <version>${shiro.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.wicketstuff</groupId>
+        <artifactId>wicketstuff-shiro</artifactId>
+        <version>${wicketstuff.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
