@@ -48,3 +48,7 @@ To test your installation open a browser to either of the following:
   
 Where '<host>' is the host name where you deployed the application. If 
 installed on you local computer you can use 'localhost'.  
+
+user/user
+admin/admin
+both/both
