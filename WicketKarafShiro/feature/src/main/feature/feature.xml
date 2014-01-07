@@ -4,14 +4,23 @@
   <repository>mvn:org.ops4j.pax.wicket/paxwicket/${pax.wicket.version}/xml/features</repository>
   <repository>mvn:org.ops4j.pax.wicket/features/${pax.wicket.version}/xml/features</repository>
       
+  <feature name="wicket" version="${wicket.version}">
+    <feature>http</feature>
+    <bundle>mvn:org.apache.wicket/wicket-util/${wicket.version}</bundle>
+    <bundle>mvn:org.apache.wicket/wicket-request/${wicket.version}</bundle>
+    <bundle>mvn:org.apache.wicket/wicket-core/${wicket.version}</bundle>
+    <bundle>mvn:org.apache.wicket/wicket-auth-roles/${wicket.version}</bundle>
+    <bundle>mvn:org.apache.wicket/wicket-extensions/${wicket.version}</bundle>
+    <bundle>mvn:org.apache.wicket/wicket-devutils/${wicket.version}</bundle>
+  </feature>
+
   <feature name="wicketkarafshiro-simple" version="${project.version}" description="Simple application using pax wicket" resolver="(obr)">
     <feature>shiro-web</feature>
     <feature>pax-wicket</feature>
     <feature>pax-wicket-blueprint</feature>
+    <feature version="${wicket.version}">wicket</feature>
 
-<!--
-    <bundle start-level="85">wrap:mvn:org.wicketstuff/wicketstuff-shiro/${wicketstuff.version}</bundle>
--->    
+    <bundle start-level="85">mvn:org.wicketstuff/wicketstuff-shiro/${wicketstuff.version}</bundle>
     <bundle start-level="85">mvn:nl.xup.karaf.wicket/wks-simple/${project.version}</bundle>
   </feature>
       
