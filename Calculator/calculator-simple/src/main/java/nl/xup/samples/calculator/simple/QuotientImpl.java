@@ -55,6 +55,6 @@ public class QuotientImpl implements Quotient {
   
   @Override
   public String toString() {
-    return "" + quotient + " R " + remainder + "\n";
+    return "" + quotient + " R " + remainder;
   }
 }

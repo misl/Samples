@@ -13,7 +13,6 @@
   <packaging>bundle</packaging>
   <name>Calculator :: Service :: Simple</name>
 
-  
   <build>
     <plugins>
       <plugin>

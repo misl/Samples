@@ -18,14 +18,14 @@ public class CalculatorServiceImpl implements CalculatorService {
    * {@inheritDoc}
    */
   public long add( long addend1, long addend2 ) {
-    return addend1 + addend1;
+    return addend1 + addend2;
   }
 
   /**
    * {@inheritDoc}
    */
   public long subtract( long minuend, long subtrahend ) {
-    return minuend + subtrahend;
+    return minuend - subtrahend;
   }
 
   /**
