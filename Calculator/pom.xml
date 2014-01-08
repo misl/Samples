@@ -15,6 +15,7 @@
     <module>calculator-service</module>
     <module>calculator-simple</module>
 <!--    <module>calculator-web</module> -->
+    <module>calculator-command</module>
     <module>calculator-branding</module>
     <module>calculator-feature</module>
     <module>calculator-assembly</module>
@@ -32,6 +33,7 @@
     <aries.blueprint.version>1.1.0</aries.blueprint.version>
     <aries.proxy.version>1.0.1</aries.proxy.version>
     <aries.util.version>1.1.0</aries.util.version>
+    <pax.logging.version>1.7.1</pax.logging.version>
   </properties>
 
   <build>
@@ -129,23 +131,29 @@
       </dependency>
 
 	    <dependency>
-	      <groupId>junit</groupId>
-	      <artifactId>junit</artifactId>
+	      <groupId>org.ops4j.pax.logging</groupId>
+	      <artifactId>pax-logging-api</artifactId>
+        <version>${pax.logging.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
         <version>4.10</version>
-	      <scope>test</scope>
-	    </dependency>
+        <scope>test</scope>
+      </dependency>
       <dependency>
         <groupId>org.jmock</groupId>
         <artifactId>jmock-junit4</artifactId>
         <version>2.5.1</version>
         <scope>test</scope>
       </dependency>
-	    <dependency>
-	      <groupId>org.mockito</groupId>
-	      <artifactId>mockito-all</artifactId>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-all</artifactId>
         <version>1.9.5</version>
-	      <scope>test</scope>
-	    </dependency>
+        <scope>test</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   
