@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+  xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0"
+  xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://cxf.apache.org/blueprint/core"
+  xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs" xmlns:jaxws="http://cxf.apache.org/blueprint/jaxws">
+
+  <cm:property-placeholder
+    persistent-id="nl.xup.samples.calculator.remote.rest"
+    update-strategy="reload">
+  </cm:property-placeholder>
+
+  <cxf:bus id="calculatorServiceBusRest">
+    <cxf:features>
+      <cxf:logging />
+    </cxf:features>
+  </cxf:bus>
+  
+  <jaxrs:server address="/api/rest" id="annotationService">
+    <jaxrs:serviceBeans>
+      <ref component-id="calculatorRestService" />
+    </jaxrs:serviceBeans>
+
+    <jaxrs:providers>
+      <ref component-id="quotientTextWriterProvider" />
+    </jaxrs:providers>
+  </jaxrs:server>
+
+  <bean id="calculatorRestService"
+    class="nl.xup.samples.calculator.remote.rest.CalculatorRestService">
+    <property name="calculatorService" ref="calculatorServiceRef" />
+  </bean>
+
+  <bean id="quotientTextWriterProvider"
+    class="nl.xup.samples.calculator.remote.jax.providers.QuotientTextMessageBodyWriter">
+  </bean>
+
+  <reference id="calculatorServiceRef"
+    interface="nl.xup.samples.calculator.service.CalculatorService" />
+
+</blueprint>
