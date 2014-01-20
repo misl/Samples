@@ -15,6 +15,7 @@
     <module>calculator-service</module>
     <module>calculator-simple</module>
     <module>calculator-remote-rest</module>
+    <module>calculator-remote-soap</module>
 <!--    <module>calculator-web</module> -->
     <module>calculator-command</module>
     <module>calculator-branding</module>
