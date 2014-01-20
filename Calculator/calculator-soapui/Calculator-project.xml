@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Calculator" resourceRoot="" soapui-version="4.5.1" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="Rest TestSuite"/>
+  <con:entry key="Report to Generate" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="soapui-setings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="Calculator" type="rest" basePath="/calculator/api/rest" definitionUrl="http://localhost:8181/calculator/api/rest?_wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8181/calculator/api/rest?_wadl"><con:part><con:url>http://localhost:8181/calculator/api/rest?_wadl</con:url><con:content><![CDATA[<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <grammars/>
+  <resources base="http://localhost:8181/calculator/api/rest">
+    <resource path="/">
+      <resource path="calculator//multiply{multiplier}/{multiplicand}">
+        <method name="GET">
+          <request>
+            <representation mediaType="application/octet-stream">
+              <param name="request" style="plain" type="xs:long"/>
+            </representation>
+            <representation mediaType="application/octet-stream">
+              <param name="request" style="plain" type="xs:long"/>
+            </representation>
+          </request>
+          <response>
+            <representation mediaType="text/plain">
+              <param name="result" style="plain" type="xs:long"/>
+            </representation>
+          </response>
+        </method>
+      </resource>
+      <resource path="calculator/add/{addend1}/{addend2}">
+        <param name="addend1" style="template" type="xs:long"/>
+        <param name="addend2" style="template" type="xs:long"/>
+        <method name="GET">
+          <request/>
+          <response>
+            <representation mediaType="text/plain">
+              <param name="result" style="plain" type="xs:long"/>
+            </representation>
+          </response>
+        </method>
+      </resource>
+      <resource path="calculator/divide/{dividend}/{divisor}">
+        <method name="GET">
+          <request>
+            <representation mediaType="application/octet-stream">
+              <param name="request" style="plain" type="xs:long"/>
+            </representation>
+            <representation mediaType="application/octet-stream">
+              <param name="request" style="plain" type="xs:long"/>
+            </representation>
+          </request>
+          <response>
+            <representation mediaType="text/plain"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="calculator/subtract/{minuend}/{subtrahend}">
+        <param name="minuend" style="template" type="xs:long"/>
+        <param name="subtrahend" style="template" type="xs:long"/>
+        <method name="GET">
+          <request/>
+          <response>
+            <representation mediaType="text/plain">
+              <param name="result" style="plain" type="xs:long"/>
+            </representation>
+          </response>
+        </method>
+      </resource>
+    </resource>
+  </resources>
+</application>]]></con:content><con:type>http://wadl.dev.java.net/2009/02</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8181</con:endpoint></con:endpoints><con:resource name="/" path="/"><con:settings/><con:parameters/><con:resource name="Multiply" path="calculator/multiply/{multiplier}/{multiplicand}"><con:settings/><con:parameters><con:parameter><con:name>multiplier</con:name><con:style>TEMPLATE</con:style><con:default/></con:parameter><con:parameter><con:name>multiplicand</con:name><con:style>TEMPLATE</con:style><con:default/></con:parameter></con:parameters><con:method name="GET" method="GET"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/octet-stream</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="REQUEST" id=""><con:mediaType>application/octet-stream</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>text/plain</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Calc: 11 * 5" mediaType="application/octet-stream"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="multiplicand" value="5"/>
+  <con:entry key="multiplier" value="11"/>
+</con:parameters></con:request></con:method></con:resource><con:resource name="Add" path="calculator/add/{addend1}/{addend2}"><con:settings/><con:parameters><con:parameter><con:name>addend1</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:long</con:type><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>addend2</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:long</con:type><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="GET" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>text/plain</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Calc: 11 + 5" mediaType="application/xml" accept="text/plain"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="AutoInferSchemas">true</con:setting></con:settings><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="addend1" value="5"/>
+  <con:entry key="addend2" value="11"/>
+</con:parameters></con:request></con:method></con:resource><con:resource name="Divide" path="calculator/divide/{dividend}/{divisor}"><con:settings/><con:parameters><con:parameter><con:name>dividend</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/></con:parameter><con:parameter><con:name>divisor</con:name><con:value/><con:style>TEMPLATE</con:style><con:default/></con:parameter></con:parameters><con:method name="GET" method="GET"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/octet-stream</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="REQUEST" id=""><con:mediaType>application/octet-stream</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:representation type="RESPONSE" id=""><con:mediaType>text/plain</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Calc: 11 / 5" mediaType="application/octet-stream"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="dividend" value="11"/>
+  <con:entry key="divisor" value="5"/>
+</con:parameters></con:request></con:method></con:resource><con:resource name="Subtract" path="calculator/subtract/{minuend}/{subtrahend}"><con:settings/><con:parameters><con:parameter><con:name>minuend</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:long</con:type><con:default xsi:nil="true"/></con:parameter><con:parameter><con:name>subtrahend</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:long</con:type><con:default xsi:nil="true"/></con:parameter></con:parameters><con:method name="GET" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>text/plain</con:mediaType><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Calc: 11 - 5" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="subtrahend" value="5"/>
+  <con:entry key="minuend" value="11"/>
+</con:parameters></con:request></con:method></con:resource></con:resource></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="CalculatorSoapServiceServiceSoapBinding" type="wsdl" bindingName="{http://soap.remote.calculator.samples.xup.nl/}CalculatorSoapServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8181/calculator/api/soap/calculatorService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8181/calculator/api/soap/calculatorService?wsdl"><con:part><con:url>http://localhost:8181/calculator/api/soap/calculatorService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CalculatorSoapServiceService" targetNamespace="http://soap.remote.calculator.samples.xup.nl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://soap.remote.calculator.samples.xup.nl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://soap.remote.calculator.samples.xup.nl/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="add" type="tns:add"/>
+      <xs:element name="addResponse" type="tns:addResponse"/>
+      <xs:element name="divide" type="tns:divide"/>
+      <xs:element name="divideResponse" type="tns:divideResponse"/>
+      <xs:element name="multiply" type="tns:multiply"/>
+      <xs:element name="multiplyResponse" type="tns:multiplyResponse"/>
+      <xs:element name="subtract" type="tns:subtract"/>
+      <xs:element name="subtractResponse" type="tns:subtractResponse"/>
+      <xs:complexType name="divide">
+        <xs:sequence>
+          <xs:element name="dividend" type="xs:long"/>
+          <xs:element name="divisor" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="divideResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="add">
+        <xs:sequence>
+          <xs:element name="addend1" type="xs:long"/>
+          <xs:element name="addend2" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="subtract">
+        <xs:sequence>
+          <xs:element name="minuend" type="xs:long"/>
+          <xs:element name="subtrahend" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="subtractResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="multiply">
+        <xs:sequence>
+          <xs:element name="multiplier" type="xs:long"/>
+          <xs:element name="multiplicand" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="multiplyResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="multiply">
+    <wsdl:part element="tns:multiply" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="divide">
+    <wsdl:part element="tns:divide" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="add">
+    <wsdl:part element="tns:add" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtractResponse">
+    <wsdl:part element="tns:subtractResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="divideResponse">
+    <wsdl:part element="tns:divideResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtract">
+    <wsdl:part element="tns:subtract" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="tns:addResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplyResponse">
+    <wsdl:part element="tns:multiplyResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CalculatorSoapService">
+    <wsdl:operation name="divide">
+      <wsdl:input message="tns:divide" name="divide"></wsdl:input>
+      <wsdl:output message="tns:divideResponse" name="divideResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:add" name="add"></wsdl:input>
+      <wsdl:output message="tns:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtract">
+      <wsdl:input message="tns:subtract" name="subtract"></wsdl:input>
+      <wsdl:output message="tns:subtractResponse" name="subtractResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiply">
+      <wsdl:input message="tns:multiply" name="multiply"></wsdl:input>
+      <wsdl:output message="tns:multiplyResponse" name="multiplyResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorSoapServiceServiceSoapBinding" type="tns:CalculatorSoapService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="divide">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="divide">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="divideResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="add">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiply">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="multiply">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="multiplyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtract">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="subtract">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="subtractResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorSoapServiceService">
+    <wsdl:port binding="tns:CalculatorSoapServiceServiceSoapBinding" name="CalculatorSoapServicePort">
+      <soap:address location="http://localhost:8181/calculator/api/soap/calculatorService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="add" bindingOperationName="add" type="Request-Response" outputName="addResponse" inputName="add" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Calc: 11 + 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:add>
+         <addend1>11</addend1>
+         <addend2>5</addend2>
+      </soap:add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/add"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="divide" bindingOperationName="divide" type="Request-Response" outputName="divideResponse" inputName="divide" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Calc: 11 / 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:divide>
+         <dividend>11</dividend>
+         <divisor>5</divisor>
+      </soap:divide>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/divide"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="multiply" bindingOperationName="multiply" type="Request-Response" outputName="multiplyResponse" inputName="multiply" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Calc: 11 * 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:multiply>
+         <multiplier>11</multiplier>
+         <multiplicand>5</multiplicand>
+      </soap:multiply>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/multiply"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="subtract" bindingOperationName="subtract" type="Request-Response" outputName="subtractResponse" inputName="subtract" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Calc: 11 - 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:subtract>
+         <minuend>11</minuend>
+         <subtrahend>5</subtrahend>
+      </soap:subtract>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/subtract"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="Rest TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Calc: Add" searchProperties="true" id="ef3998cf-b54e-4a20-b425-dcb877b6ddf9"><con:settings/><con:testStep type="restrequest" name="Add: 11 + 5"><con:settings/><con:config service="Calculator" methodName="GET" resourcePath="/calculator/api/rest/calculator/add/{addend1}/{addend2}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add: 11 + 5" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>16</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="addend1" value="5"/>
+  <con:entry key="addend2" value="11"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Add: 1 + 9"><con:settings/><con:config service="Calculator" methodName="GET" resourcePath="/calculator/api/rest/calculator/add/{addend1}/{addend2}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of Add: 1 + 9" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>10</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="addend1" value="9"/>
+  <con:entry key="addend2" value="1"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Calc: Subtract" searchProperties="true" id="49111499-a2cf-475e-8e3a-775b88bf279b"><con:settings/><con:testStep type="restrequest" name="Subtract: 11 - 5"><con:settings/><con:config service="Calculator" methodName="GET" resourcePath="/calculator/api/rest/calculator/subtract/{minuend}/{subtrahend}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add: 11 + 5" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>6</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="addend1" value="5"/>
+  <con:entry key="subtrahend" value="5"/>
+  <con:entry key="addend2" value="11"/>
+  <con:entry key="minuend" value="11"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Subtract: 1 - 9"><con:settings/><con:config service="Calculator" methodName="GET" resourcePath="/calculator/api/rest/calculator/subtract/{minuend}/{subtrahend}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add: 1 + 9" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>-8</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="addend1" value="9"/>
+  <con:entry key="subtrahend" value="9"/>
+  <con:entry key="addend2" value="1"/>
+  <con:entry key="minuend" value="1"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Calc: Divide" searchProperties="true" id="fc8d4072-f0e1-4c2b-b8d0-2b4fa2aef92c"><con:settings/><con:testStep type="restrequest" name="Divide: 11 / 5"><con:settings/><con:config service="Calculator" methodName="GET" resourcePath="/calculator/api/rest/calculator/divide/{dividend}/{divisor}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add: 11 - 5" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>2 R 1</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="addend1" value="5"/>
+  <con:entry key="subtrahend" value="5"/>
+  <con:entry key="dividend" value="11"/>
+  <con:entry key="addend2" value="11"/>
+  <con:entry key="divisor" value="5"/>
+  <con:entry key="minuend" value="11"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Divide: 1 / 9"><con:settings/><con:config service="Calculator" methodName="GET" resourcePath="/calculator/api/rest/calculator/divide/{dividend}/{divisor}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add: 1 - 9" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>0 R 1</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="addend1" value="9"/>
+  <con:entry key="subtrahend" value="9"/>
+  <con:entry key="dividend" value="1"/>
+  <con:entry key="addend2" value="1"/>
+  <con:entry key="divisor" value="9"/>
+  <con:entry key="minuend" value="1"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Calc: Multiply" searchProperties="true" id="cf08c732-6114-4c3f-b3bf-3332eb64792d"><con:settings/><con:testStep type="restrequest" name="Multiply: 11 * 5"><con:settings/><con:config service="Calculator" methodName="GET" resourcePath="/calculator/api/rest/calculator/multiply/{multiplier}/{multiplicand}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add: 11 + 5" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>55</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="addend1" value="5"/>
+  <con:entry key="multiplicand" value="5"/>
+  <con:entry key="addend2" value="11"/>
+  <con:entry key="multiplier" value="11"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Multiply: 1 * 9"><con:settings/><con:config service="Calculator" methodName="GET" resourcePath="/calculator/api/rest/calculator/multiply/{multiplier}/{multiplicand}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Add: 1 + 9" mediaType="application/xml"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181</con:endpoint><con:request/><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>9</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="addend1" value="9"/>
+  <con:entry key="multiplicand" value="9"/>
+  <con:entry key="addend2" value="1"/>
+  <con:entry key="multiplier" value="1"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:testSuite name="Soap TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="add TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="Add: 11 + 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapServiceServiceSoapBinding</con:interface><con:operation>add</con:operation><con:request name="Add: 11 + 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:add>
+         <addend1>11</addend1>
+         <addend2>5</addend2>
+      </soap:add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>16</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/add" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Add: 1 + 9"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapServiceServiceSoapBinding</con:interface><con:operation>add</con:operation><con:request name="Add: 1 + 9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:add>
+         <addend1>1</addend1>
+         <addend2>9</addend2>
+      </soap:add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>10</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/add" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="divide TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="Divide: 11 / 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapServiceServiceSoapBinding</con:interface><con:operation>divide</con:operation><con:request name="Divide: 11 / 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:divide>
+         <dividend>11</dividend>
+         <divisor>5</divisor>
+      </soap:divide>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>2 R 1</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/divide" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Divide: 1 / 9"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapServiceServiceSoapBinding</con:interface><con:operation>divide</con:operation><con:request name="Divide: 1 / 9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:divide>
+         <dividend>1</dividend>
+         <divisor>9</divisor>
+      </soap:divide>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>0 R 1</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/divide" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="multiply TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="Multiply: 11 * 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapServiceServiceSoapBinding</con:interface><con:operation>multiply</con:operation><con:request name="Multiply: 11 * 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:multiply>
+         <multiplier>11</multiplier>
+         <multiplicand>5</multiplicand>
+      </soap:multiply>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>55</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/multiply" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Multiply: 1 * 9"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapServiceServiceSoapBinding</con:interface><con:operation>multiply</con:operation><con:request name="Multiply: 1 * 9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:multiply>
+         <multiplier>1</multiplier>
+         <multiplicand>9</multiplicand>
+      </soap:multiply>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>9</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/multiply" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="subtract TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="Subtract: 11 - 5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapServiceServiceSoapBinding</con:interface><con:operation>subtract</con:operation><con:request name="Subtract: 11 - 5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:subtract>
+         <minuend>11</minuend>
+         <subtrahend>5</subtrahend>
+      </soap:subtract>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>6</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/subtract" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Subtract: 1 - 9"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorSoapServiceServiceSoapBinding</con:interface><con:operation>subtract</con:operation><con:request name="Subtract: 1 - 9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/calculator/api/soap/calculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.remote.calculator.samples.xup.nl/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:subtract>
+         <minuend>1</minuend>
+         <subtrahend>9</subtrahend>
+      </soap:subtract>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>-8</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://soap.remote.calculator.samples.xup.nl/CalculatorSoapService/subtract" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>
