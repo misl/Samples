@@ -47,7 +47,7 @@ public class CalculatorRestService {
    * @return the sum of the addition.
    */
   @GET
-  @Path( "calculator/{addend1}/add/{addend2}" )
+  @Path( "calculator/add/{addend1}/{addend2}" )
   @Produces( { MediaType.TEXT_PLAIN } )
   public long add( @PathParam( "addend1" ) long addend1, @PathParam( "addend2" ) long addend2 ) {
     long answer = 0L;
@@ -71,7 +71,7 @@ public class CalculatorRestService {
    * @return the difference of the subtractiong.
    */
   @GET
-  @Path( "calculator/{minuend}/add/{subtrahend}" )
+  @Path( "calculator/subtract/{minuend}/{subtrahend}" )
   @Produces( { MediaType.TEXT_PLAIN } )
   public long subtract( @PathParam( "minuend" ) long minuend, @PathParam( "subtrahend" ) long subtrahend ) {
     long answer = 0L;
@@ -95,9 +95,9 @@ public class CalculatorRestService {
    * @return the product of the multiplication.
    */
   @GET
-  @Path( "calculator/{multiplier}/multiply/{multiplicand}" )
+  @Path( "calculator/multiply/{multiplier}/{multiplicand}" )
   @Produces( { MediaType.TEXT_PLAIN } )
-  public long multiply( long multiplier, long multiplicand ) {
+  public long multiply( @PathParam( "multiplier" ) long multiplier, @PathParam( "multiplicand" ) long multiplicand ) {
     long answer = 0L;
     try {
       answer = getCalculatorService().multiply( multiplier, multiplicand );
@@ -119,9 +119,9 @@ public class CalculatorRestService {
    * @return the quotient of the division.
    */
   @GET
-  @Path( "calculator/{dividend}/divide/{divisor}" )
+  @Path( "calculator/divide/{dividend}/{divisor}" )
   @Produces( { MediaType.TEXT_PLAIN } )
-  public Quotient divide( long dividend, long divisor ) {
+  public Quotient divide( @PathParam( "dividend" )long dividend, @PathParam( "divisor" )long divisor ) {
     Quotient answer = null;
     try {
       answer = getCalculatorService().divide( dividend, divisor );
