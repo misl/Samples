@@ -42,7 +42,7 @@
     <bundle start-level="85">mvn:nl.xup.samples.calculator/calculator-service/${project.version}</bundle>
     <bundle start-level="85">mvn:nl.xup.samples.calculator/calculator-simple/${project.version}</bundle>
     <bundle start-level="85">mvn:nl.xup.samples.calculator/calculator-command/${project.version}</bundle>
-<!--    <bundle start-level="85">mvn:nl.xup.samples.calculator/calculator-web/${project.version}</bundle> -->
+    <bundle start-level="85">mvn:nl.xup.samples.calculator/calculator-web/${project.version}</bundle>
   </feature>
       
 </features>
