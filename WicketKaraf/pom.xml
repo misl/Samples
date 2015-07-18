@@ -22,8 +22,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <wicket.version>6.14.0</wicket.version>
-    <pax.wicket.version>3.0.1</pax.wicket.version>
-    <karaf.version>3.0.1</karaf.version>
+    <pax.wicket.version>3.0.2</pax.wicket.version>
+    <karaf.version>4.0.0</karaf.version>
     <osgi.framework.version>5.0.0</osgi.framework.version>
     <aries.blueprint.version>1.1.0</aries.blueprint.version>
     <aries.proxy.version>1.0.1</aries.proxy.version>
@@ -41,11 +41,6 @@
             <source>7</source>
             <target>7</target>
           </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>

@@ -71,6 +71,7 @@
       <groupId>nl.xup.karaf.wicket</groupId>
       <artifactId>wk-branding</artifactId>
       <version>${project.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -109,7 +110,7 @@
         <executions>
           <execution>
             <id>copy</id>
-            <phase>generate-resources</phase>
+            <phase>prepare-package</phase>
             <goals>
               <goal>copy</goal>
             </goals>
@@ -118,7 +119,7 @@
                 <artifactItem>
                   <groupId>nl.xup.karaf.wicket</groupId>
                   <artifactId>wk-branding</artifactId>
-                  <version>${project-version}</version>
+                  <version>${project.version}</version>
                   <outputDirectory>target/assembly/lib</outputDirectory>
                   <destFileName>branding.jar</destFileName>
                 </artifactItem>
@@ -134,10 +135,22 @@
           <ignoreDependencyFlag>true</ignoreDependencyFlag>
           <targetServerDirectory>${assembly.directory}</targetServerDirectory>
           <bootFeatures>
-            <feature>standard</feature>
-            <feature>http</feature>
+            <feature>jaas</feature>
+            <feature>shell</feature>
+            <feature>feature</feature>
             <feature>ssh</feature>
+            <feature>management</feature>
+            <feature>bundle</feature>
             <feature>config</feature>
+            <feature>deployer</feature>
+            <feature>diagnostic</feature>
+            <feature>instance</feature>
+            <feature>kar</feature>
+            <feature>log</feature>
+            <feature>package</feature>
+            <feature>service</feature>
+            <feature>system</feature>
+            <feature>http</feature>
             <feature>wicketkaraf-simple</feature>
           </bootFeatures>
         </configuration>
