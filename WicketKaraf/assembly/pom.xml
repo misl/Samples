@@ -134,6 +134,12 @@
         <configuration>
           <ignoreDependencyFlag>true</ignoreDependencyFlag>
           <targetServerDirectory>${assembly.directory}</targetServerDirectory>
+          <descriptors>
+            <descriptor>mvn:org.apache.karaf.features/standard/${karaf.version}/xml/features</descriptor>
+            <descriptor>mvn:org.apache.karaf.features/enterprise/${karaf.version}/xml/features</descriptor>
+            <descriptor>mvn:org.ops4j.pax.wicket/paxwicket/${pax.wicket.version}/xml/features</descriptor>
+            <descriptor>mvn:org.ops4j.pax.wicket/features/${pax.wicket.version}/xml/features</descriptor>
+          </descriptors>
           <bootFeatures>
             <feature>jaas</feature>
             <feature>shell</feature>
@@ -158,7 +164,10 @@
     </plugins>
     <pluginManagement>
       <plugins>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        <!--
+          This plugin's configuration is used to store Eclipse m2e settings only. 
+          It has no influence on the Maven build itself.
+        -->
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
           <artifactId>lifecycle-mapping</artifactId>
@@ -168,15 +177,9 @@
               <pluginExecutions>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>
-                      org.apache.maven.plugins
-                    </groupId>
-                    <artifactId>
-                      maven-dependency-plugin
-                    </artifactId>
-                    <versionRange>
-                      [2.1,)
-                    </versionRange>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <versionRange>[2.1,)</versionRange>
                     <goals>
                       <goal>copy</goal>
                     </goals>
@@ -187,17 +190,12 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>
-                      org.apache.karaf.tooling
-                    </groupId>
-                    <artifactId>
-                      karaf-maven-plugin
-                    </artifactId>
-                    <versionRange>
-                      [3.0.0,)
-                    </versionRange>
+                    <groupId>org.apache.karaf.tooling</groupId>
+                    <artifactId>karaf-maven-plugin</artifactId>
+                    <versionRange>[4.0.0,)</versionRange>
                     <goals>
-                      <goal>install-kars</goal>
+                      <goal>assembly</goal>
+                      <goal>archive</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
