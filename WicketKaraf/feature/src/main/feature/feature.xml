@@ -3,34 +3,15 @@
   <repository>mvn:org.ops4j.pax.wicket/paxwicket/${pax.wicket.version}/xml/features</repository>
   <repository>mvn:org.ops4j.pax.wicket/features/${pax.wicket.version}/xml/features</repository>
 
-  <feature name="aries-annotation" description="Aries Annotations">
-    <feature prerequisite="false" dependency="false">aries-blueprint</feature>
-    <bundle start-level="20" dependency="true">mvn:org.apache.commons/commons-jexl/2.1.1</bundle>
-    <bundle start-level="20" dependency="true">mvn:org.ow2.asm/asm-all/5.0.4</bundle>
-    <bundle start-level="20" dependency="true">mvn:org.apache.xbean/xbean-bundleutils/3.18</bundle>
-    <bundle start-level="20" dependency="true">mvn:org.apache.xbean/xbean-asm5-shaded/3.18</bundle>
-    <bundle start-level="20" dependency="true">mvn:org.apache.xbean/xbean-reflect/3.18</bundle>
-    <bundle start-level="20" dependency="true">mvn:org.apache.xbean/xbean-finder-shaded/3.18</bundle>
-    <bundle start-level="20">mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.annotation.api/1.0.1</bundle>
-    <bundle start-level="20">mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.annotation.impl/1.0.1</bundle>
-    <bundle start-level="20">mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.jexl.evaluator/1.0.0</bundle>
-    <bundle start-level="20">mvn:org.slf4j/slf4j-api/1.7.2</bundle>
-  </feature>
-
-  <feature name="wicket" version="${wicket.version}">
-    <feature>http</feature>
-    <bundle>mvn:org.apache.wicket/wicket-util/${wicket.version}</bundle>
-    <bundle>mvn:org.apache.wicket/wicket-request/${wicket.version}</bundle>
-    <bundle>mvn:org.apache.wicket/wicket-core/${wicket.version}</bundle>
-    <bundle>mvn:org.apache.wicket/wicket-auth-roles/${wicket.version}</bundle>
-    <bundle>mvn:org.apache.wicket/wicket-extensions/${wicket.version}</bundle>
-    <bundle>mvn:org.apache.wicket/wicket-devutils/${wicket.version}</bundle>
+  <feature name="wicketkaraf-deps" version="${project.version}" description="Some required dependencies">
+    <bundle start-level="80">mvn:org.slf4j/slf4j-api/${slf4j.version}</bundle>
+    <bundle start-level="80">mvn:org.slf4j/slf4j-simple/${slf4j.version}</bundle>
   </feature>
 
   <feature name="wicketkaraf-simple" version="${project.version}" description="Simple application using pax wicket">
+    <feature>wicketkaraf-deps</feature>
     <feature version="${pax.wicket.version}">pax-wicket</feature>
     <feature version="${pax.wicket.version}">pax-wicket-blueprint</feature>
-    <feature version="${wicket.version}">wicket</feature>
 
     <bundle start-level="85">mvn:nl.xup.karaf.wicket/wk-simple/${project.version}</bundle>
   </feature>

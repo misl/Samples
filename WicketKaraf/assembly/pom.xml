@@ -157,8 +157,10 @@
             <feature>service</feature>
             <feature>system</feature>
             <feature>http</feature>
-            <feature>wicketkaraf-simple</feature>
           </bootFeatures>
+          <installedFeatures>
+            <feature>wicketkaraf-simple</feature>
+          </installedFeatures>
         </configuration>
       </plugin>
     </plugins>
