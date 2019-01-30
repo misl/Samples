@@ -3,13 +3,7 @@
   <repository>mvn:org.ops4j.pax.wicket/paxwicket/${pax.wicket.version}/xml/features</repository>
   <repository>mvn:org.ops4j.pax.wicket/features/${pax.wicket.version}/xml/features</repository>
 
-  <feature name="wicketkaraf-deps" version="${project.version}" description="Some required dependencies">
-    <bundle start-level="80">mvn:org.slf4j/slf4j-api/${slf4j.version}</bundle>
-    <bundle start-level="80">mvn:org.slf4j/slf4j-simple/${slf4j.version}</bundle>
-  </feature>
-
   <feature name="wicketkaraf-simple" version="${project.version}" description="Simple application using pax wicket">
-    <feature>wicketkaraf-deps</feature>
     <feature version="${pax.wicket.version}">pax-wicket</feature>
     <feature version="${pax.wicket.version}">pax-wicket-blueprint</feature>
 
