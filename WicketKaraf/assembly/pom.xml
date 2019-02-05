@@ -157,10 +157,10 @@
             <feature>service</feature>
             <feature>system</feature>
             <feature>http</feature>
-          </bootFeatures>
-          <installedFeatures>
+            <feature>paxwicket</feature>
+            <feature>paxwicket-blueprint</feature>
             <feature>wicketkaraf-simple</feature>
-          </installedFeatures>
+          </bootFeatures>
         </configuration>
       </plugin>
     </plugins>
